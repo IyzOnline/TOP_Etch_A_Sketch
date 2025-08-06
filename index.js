@@ -28,7 +28,7 @@ function tableCreation(dimensions){
     for (let i = 0; i < dimensions; i++) {
         const row = document.createElement('div');
         row.classList.add('row');
-        row.style.height = 300/dimensions;
+        row.style.height = `${300/dimensions}px`;
     
         for (let j = 0; j < dimensions; j++) {
             const cell = document.createElement('div');
