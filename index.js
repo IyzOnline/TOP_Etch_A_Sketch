@@ -41,3 +41,15 @@ function tableCreation(dimensions){
         container.appendChild(row);
     }
 }
+
+function randomizeColor(){
+    let finalColor = "#";
+    for(let i = 0; i < 6; i++){
+        let result = Math.floor((Math.random * 16) + 1);
+        if(result >= 10){
+            result = String.fromCharCode(result + 55);
+        }
+        finalColor += result;
+    }
+    return finalColor;
+}
