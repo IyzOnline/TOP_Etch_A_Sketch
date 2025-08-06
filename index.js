@@ -7,9 +7,7 @@ promptBtn.textContent = "Change sketch pad dimensions";
 promptBtn.addEventListener("click", () => {
     const dimensions = Number(prompt("Enter the number of SQUARES per side you want the sketch pad to have? \n You are limited to 100", "5"));
     if (dimensions !== NaN && dimensions <= 100 && dimensions > 0) {
-
-        const rows = container.children;
-        Array.from(rows).map(row => row.style.height = 300/dimensions);
+        tableCreation(dimensions);
     } else {
         window.alert("Error: Invalid input.");
     }
@@ -25,17 +23,20 @@ function onLeave(event){
     event.target.style.backgroundColor = "#ffffff";
 }
 
-for (let i = 0; i < 17; i++) {
-    const row = document.createElement('div');
-    row.classList.add('row');
-
-    for (let j = 0; j < 17; j++) {
-        const cell = document.createElement('div');
-        cell.classList.add('cell');
-        cell.addEventListener("mouseenter", onEnter);
-        cell.addEventListener("mouseleave", onLeave);
-        row.appendChild(cell);
+function tableCreation(dimensions){
+    for (let i = 0; i <= dimensions; i++) {
+        const row = document.createElement('div');
+        row.classList.add('row');
+        row.style.height = 300/dimensions;
+    
+        for (let j = 0; j <= dimensions; j++) {
+            const cell = document.createElement('div');
+            cell.classList.add('cell');
+            cell.addEventListener("mouseenter", onEnter);
+            cell.addEventListener("mouseleave", onLeave);
+            row.appendChild(cell);
+        }
+    
+        container.appendChild(row);
     }
-
-    container.appendChild(row);
 }
