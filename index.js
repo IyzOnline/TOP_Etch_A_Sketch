@@ -25,12 +25,12 @@ function onLeave(event){
 }
 
 function tableCreation(dimensions){
-    for (let i = 0; i <= dimensions; i++) {
+    for (let i = 0; i < dimensions; i++) {
         const row = document.createElement('div');
         row.classList.add('row');
         row.style.height = 300/dimensions;
     
-        for (let j = 0; j <= dimensions; j++) {
+        for (let j = 0; j < dimensions; j++) {
             const cell = document.createElement('div');
             cell.classList.add('cell');
             cell.addEventListener("mouseenter", onEnter);
