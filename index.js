@@ -21,6 +21,9 @@ function onEnter(event){
 }
 
 function onLeave(event){
+    if(event.target.style.opacity < 1){
+        event.target.style.opacity = +event.target.style.opacity + 0.1;
+    }
     event.target.style.backgroundColor = "#ffffff";
 }
 
