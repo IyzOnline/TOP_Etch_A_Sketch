@@ -4,10 +4,12 @@ const promptBtn = document.createElement('button');
 promptBtn.classList.add('promptBtn');
 promptBtn.textContent = "Change sketch pad dimensions";
 
-promptBtn.addEventListener("onclick", () => {
-    const dimensions = Number(prompt("Enter the number of SQUARES per side do you want the sketch pad to have? \n You are limited to 100", "5"));
+promptBtn.addEventListener("click", () => {
+    const dimensions = Number(prompt("Enter the number of SQUARES per side you want the sketch pad to have? \n You are limited to 100", "5"));
     if (dimensions !== NaN && dimensions <= 100 && dimensions > 0) {
-        container.innerHTML = '';
+
+        const rows = container.children;
+        Array.from(rows).map(row => row.style.height = 300/dimensions);
     } else {
         window.alert("Error: Invalid input.");
     }
@@ -37,4 +39,3 @@ for (let i = 0; i < 17; i++) {
 
     container.appendChild(row);
 }
-
