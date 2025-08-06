@@ -18,13 +18,9 @@ document.body.insertBefore(promptBtn, container);
 
 function onEnter(event){
     event.target.style.backgroundColor = randomizeColor();
-}
-
-function onLeave(event){
-    if(event.target.style.opacity < 1){
+    if (event.target.style.opacity < 1) {
         event.target.style.opacity = +event.target.style.opacity + 0.1;
     }
-    event.target.style.backgroundColor = "#ffffff";
 }
 
 function tableCreation(dimensions){
@@ -37,7 +33,6 @@ function tableCreation(dimensions){
             const cell = document.createElement('div');
             cell.classList.add('cell');
             cell.addEventListener("mouseenter", onEnter);
-            cell.addEventListener("mouseleave", onLeave);
             row.appendChild(cell);
         }
     
