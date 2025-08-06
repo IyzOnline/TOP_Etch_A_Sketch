@@ -17,7 +17,7 @@ promptBtn.addEventListener("click", () => {
 document.body.insertBefore(promptBtn, container);
 
 function onEnter(event){
-    event.target.style.backgroundColor = "red";
+    event.target.style.backgroundColor = randomizeColor();
 }
 
 function onLeave(event){
