@@ -16,6 +16,8 @@ promptBtn.addEventListener("click", () => {
 
 document.body.insertBefore(promptBtn, container);
 
+tableCreation(5);
+
 function onEnter(event){
     event.target.style.backgroundColor = randomizeColor();
     if (event.target.style.opacity < 1) {
