@@ -7,6 +7,7 @@ promptBtn.textContent = "Change sketch pad dimensions";
 promptBtn.addEventListener("click", () => {
     const dimensions = Number(prompt("Enter the number of SQUARES per side you want the sketch pad to have? \n You are limited to 100", "5"));
     if (dimensions !== NaN && dimensions <= 100 && dimensions > 0) {
+        container.innerHTML = "";
         tableCreation(dimensions);
     } else {
         window.alert("Error: Invalid input.");
