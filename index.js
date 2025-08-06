@@ -4,6 +4,11 @@ const promptBtn = document.createElement('button');
 promptBtn.classList.add('promptBtn');
 promptBtn.textContent = "Change sketch pad dimensions";
 
+promptBtn.addEventListener("onclick", () => {
+    const dimensions = prompt("How many SQUARES per side do you want the sketch pad to have?", "5");
+    container.innerHTML = '';
+});
+
 document.body.insertBefore(promptBtn, container);
 
 function onEnter(event){
