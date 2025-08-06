@@ -1,5 +1,11 @@
 const container = document.querySelector('.container');
 
+const promptBtn = document.createElement('button');
+promptBtn.classList.add('promptBtn');
+promptBtn.textContent = "Change sketch pad dimensions";
+
+document.body.insertBefore(promptBtn, container);
+
 function onEnter(event){
     event.target.style.backgroundColor = "red";
 }
